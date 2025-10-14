@@ -22,7 +22,7 @@ Este proyecto permite reproducir listas **MUSICA (.m3u)** en la consola **R36S**
    ```bash
    sudo apt install socat
    sudo apt install mpv --no-install-recommends
-   sudo apt install pulse-audio
+   sudo apt install pulseaudio
 
 Copiar los scripts LUA
 
