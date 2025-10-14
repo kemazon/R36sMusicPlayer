@@ -13,9 +13,14 @@ Este proyecto permite reproducir listas **MUSICA (.m3u)** en la consola **R36S**
      ```
 
 2. **Editar la ruta del playlist.m3u**
-   - Abre el archivo `Musica_Play.sh` y `Musica_Play_Player.sh` reemplaza la ruta "PLAYLIST=" del playlist:
+   - Abre el archivo `Musica_Play.sh` y `Musica_Play_Player.sh` reemplaza "PLAYLIST=" esta ruta corresponde al playlist de tu música/video:
      ```bash
      PLAYLIST="/roms2/music/playlist.m3u"
+     ```
+     
+   - Abre el archivo `Musica_Play.sh` y `Musica_Play_Player.sh` reemplaza la "RUTA_MUSICA=", esta será la ruta donde se ubiquen los archivos de audio/video:
+     ```bash
+     RUTA_MUSICA="/roms2/music"
      ```
 
 3. **Instalar dependencias**
@@ -42,10 +47,15 @@ Agrega la siguiente línea al final:
 
 o, de tener solo una MicroSD:
 
-    @reboot basg /roms/tools/Botones.sh
+    @reboot bash /roms/tools/Botones.sh
     
 
 Reinicia el dispositivo para aplicar los cambios.
+
+## Uso:
+Musica_Play_Player.sh - Ejecuta el reproductor mostrando las carátulas de los audios o en su defecto la imagen del video, en este modo se puede controlar el playlist, si el audio no cuenta con carátula se mostrará pantalla en negro mientras el audio se reproduce.
+
+Musica_Play.sh - Reproduce el audio en segundo plano, se pueden lanzar juegos y controlar la reprduciión cómo si la pantalla estuviese apagada
 
 ##📱 Controles
 
@@ -67,6 +77,10 @@ Reinicia el dispositivo para aplicar los cambios.
   
     Fn + D-Pad Izquierdo = Track Previo
     Fn + D-Pad Derecho = Siguiente Track
+	Fn + Y = Activar/desactivar modo aleatorio en playlist
+	Fn + A = Buscar nuevos archivos (/roms2/music/*), actualizar el playlist y volverlo a cargar
+	Fn + D-Pad Arriba = Avanzar 15 segundos
+	Fn + D-Pad Abajo = Avanzar retroceder 15 segundos
     
   Controles adicionales:
   
