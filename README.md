@@ -90,11 +90,14 @@ Musica_Play.sh - Reproduce el audio en segundo plano, se pueden lanzar juegos y 
 	
 🧩 Notas
 
-    El script Botones.sh debe permanecer en ejecución para que los controles funcionen, este se ejecuta automáticamente al inicio del sistema (crontab)
-
-    Se recomienda usar mpv sin dependencias adicionales para reducir el consumo de recursos.
-
-    Algunas funciones están integradas directamente en los scripts, otras dependen de script LUA en MPV.
+    >El script Botones.sh debe permanecer en ejecución para que los controles funcionen, este se ejecuta automáticamente al inicio del sistema (crontab)
+	
+	>Para cargar las letras, los nombres de los archivos de audio deben tener el formato:
+	Artista - Canción.m4a
+	
+	>Se recomienda usar mpv sin dependencias adicionales para reducir el consumo de recursos.
+    
+	>Algunas funciones están integradas directamente en los scripts, otras dependen de script LUA en MPV.
 
 🖼️ Capturas de Pantalla
 
