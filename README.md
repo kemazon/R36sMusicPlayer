@@ -55,7 +55,7 @@ Reinicia el dispositivo para aplicar los cambios.
 ## Uso:
 Musica_Play_Player.sh - Ejecuta el reproductor mostrando las carátulas de los audios o en su defecto la imagen del video, en este modo se puede controlar el playlist, si el audio no cuenta con carátula se mostrará pantalla en negro mientras el audio se reproduce.
 
-Musica_Play.sh - Reproduce el audio en segundo plano, se pueden lanzar juegos y controlar la reprduciión cómo si la pantalla estuviese apagada
+Musica_Play.sh - Reproduce el audio en segundo plano, se pueden lanzar juegos y controlar la reprduciión (si el emulador soporta) cómo si la pantalla estuviese apagada
 
 ##📱 Controles
 
