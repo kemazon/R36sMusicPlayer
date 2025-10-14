@@ -7,7 +7,7 @@ Este proyecto permite reproducir listas **MUSICA (.m3u)** en la consola **R36S**
 ## ⚙️ Instalación
 
 1. **Copiar los scripts**
-   - Copia los archivos `Musica_Play.sh`, 'Musica_Play_Player.sh' y `Botones.sh` en la carpeta:
+   - Copia los archivos `Musica_Play.sh`, `Musica_Play_Player.sh` y `Botones.sh` en la carpeta:
      ```
      /roms2/tools o /roms/tools (según sea el caso)
      ```
