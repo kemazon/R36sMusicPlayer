@@ -1,6 +1,6 @@
 # 📺🎵 Reproductor de audio/video para R36S
 
-Este proyecto permite reproducir listas **MUSICA (.m3u)** en la consola **R36S**, utilizando **mpv** y scripts personalizados para controlar las funciones mediante los botones del dispositivo.
+Este proyecto permite reproducir listas de **MUSICA (.m3u)** en la consola **R36S**, utilizando **mpv** y scripts personalizados para controlar las funciones mediante los botones del dispositivo.
 
 ---
 
