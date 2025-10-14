@@ -13,7 +13,7 @@ Este proyecto permite reproducir listas **MUSICA (.m3u)** en la consola **R36S**
      ```
 
 2. **Editar la ruta del playlist.m3u**
-   - Abre el archivo `Musica_Play.sh` y 'Musica_Play_Player.sh' reemplaza la ruta "PLAYLIST=" del playlist:
+   - Abre el archivo `Musica_Play.sh` y `Musica_Play_Player.sh` reemplaza la ruta "PLAYLIST=" del playlist:
      ```bash
      PLAYLIST="/roms2/music/playlist.m3u"
      ```
