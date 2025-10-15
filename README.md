@@ -86,6 +86,7 @@ Musica_Play.sh - Reproduce el audio en segundo plano, se pueden lanzar juegos y 
   
     Fn + R2 = Apaga WiFi
     Fn + L2 = Enciende WiFi
+	Fn + L1 = Conecta al último dispositivo bluetooth usado (depende del proyecto BluetoothForR36).
     
 	
 🧩 Notas
