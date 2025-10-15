@@ -1,6 +1,7 @@
 #!/bin/bash
 
 PlaylistM3u="/roms2/music/playlist.m3u"
+RUTA_MUSICA="/roms2/music"
 
 
 JOYSTICK_DEVICE="/dev/input/event2"
@@ -153,7 +154,7 @@ evtest "$JOYSTICK_DEVICE" | while read -r line; do
 	#Stick 2 Abajo
     if [[ $line == *"(ABS_RY), value 1800"* ]]; then
         touch /tmp/btnS2Abajo
-    elif [[ $line == *"(ABS_RY), value 0"* ]]; then
+	elif [[ $line == *"(ABS_RY), value 0"* ]]; then
         rm /tmp/btnS2Abajo
     fi
 	
@@ -316,6 +317,23 @@ evtest "$JOYSTICK_DEVICE" | while read -r line; do
         rm -f /tmp/btnFn /tmp/btnR2
     fi
 	
+	#Conectar a ultimo dispositivo bluetooth (audio)
+    if test -e /tmp/btnFn && test -e /tmp/btnL1; then
+        btDevice=$(cat /home/ark/last_bluetooth)
+		sudo pulseaudio -k -v
+		sleep 0.5
+		sudo pulseaudio --start
+		sleep 0.5
+		bluetoothctl disconnect "${btDevice//_/:}"
+		sleep 0.5
+		bluetoothctl connect "${btDevice//_/:}"		
+		sleep 0.5
+		pactl set-card-profile bluez_card."${btDevice}" a2dp_sink
+		sleep 0.5
+		pactl set-default-sink bluez_sink."${btDevice}".a2dp_sink
+        rm -f /tmp/btnFn /tmp/btnL1
+    fi
+	
 	#Avanzar 15 segundos
 	if test -e /tmp/btnFn && test -e /tmp/btnPadUp; then
         #echo 'seek 15' | socat - /tmp/mpvsocket
@@ -432,7 +450,8 @@ evtest "$JOYSTICK_DEVICE" | while read -r line; do
 		# Comparar y actualizar solo si hay cambios
 		if [ "$num_archivos" -ne "$num_lineas" ]; then
 			# Actualizar el PlaylistM3u
-			find /roms2/music -type f \( -name "*.m4a" -o -name "*.mp4" -o -name "*.ogg" -o -name "*.mp3" -o -name "*.aac" \) | sort > "$PlaylistM3u"
+			find $RUTA_MUSICA -type f \( -name "*.m4a" -o -name "*.mp4" -o -name "*.ogg" -o -name "*.mp3" -o -name "*.aac" \) | sort > "$PlaylistM3u"
+			echo "{ \"command\": [\"loadfile\", \"$PlaylistM3u\", \"replace\"] }"| socat - /tmp/mpvsocket
 			echo "show-text \"Se actualizó el playlist, tienes $num_archivos archivos\"" | socat - /tmp/mpvsocket
 		else
 			echo "show-text \"No hay cambios en tu playlist, \ntienes ${num_archivos} archivos\"" | socat - /tmp/mpvsocket
