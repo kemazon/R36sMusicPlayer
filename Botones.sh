@@ -9,6 +9,9 @@ JOYSTICK_DEVICE="/dev/input/event2"
 #Damos permisos de escritura para establecer la velocidad tope del CPU
 sudo chmod 777 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
 
+#Damos permisos de escritura para generar los archivos temporales
+sudo chmod 777 /tmp
+
 if [ "$(whoami)" != "ark" ]; then
     echo "Este script debe ejecutarse como el usuario 'ark'."
     exit 1
